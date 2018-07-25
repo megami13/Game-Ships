@@ -108,21 +108,12 @@ public class GameController : MonoBehaviour {
         int x = buttonID - (buttonID / 10) * 10;
         int y = buttonID / 10;
 
-        //info = Convert.ToString(x) + Convert.ToString(y);
-        
-        //for (int i = 1; i > gameInfo.pcBattleship; i--)
-        //{
         if (pcBoard[x, y] == "0")
         {
             info = "";
             textBox.text = "Miss";
         }
 
-        //for (int i = 0; i < gameInfo.pcBattleship; i--)
-        //{
-        //    checkIfHit("battleship", gameInfo.pcBattleshipSize1, gameInfo.pcBattleship, gameInfo.pcBattleshipAlive,
-        //        gameInfo.pcBoard, x, y);
-        //}
         else if (pcBoard[x, y] == "battleship" + "0")
         {
             info = "X";

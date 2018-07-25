@@ -31,9 +31,6 @@ public class CreateShipsController : MonoBehaviour {
     private void Awake()
     {
         setShipControllerReferenceOnButtons();
-        //setShipControllerReference();
-
-        //gameInfo = GetComponent<GameInfo>();
 
         textBox.text = "Place one battleship (size: 4)";
 
@@ -47,16 +44,6 @@ public class CreateShipsController : MonoBehaviour {
             buttonList[i].GetComponentInParent<GridSpace>().SetShipControllerReference(this, i);
         }
     }
-
-    //void setShipControllerReference()
-    //{
-    //    gameInfo.GetComponent<GameInfo>().SetShipControllerReference(this);
-    //}
-
-    //public void SetGameControllerReference(GameController controller)
-    //{
-    //    gameController = controller;
-    //}
 
     public void SetGameInfoReference(GameInfo info)
     {
@@ -78,12 +65,8 @@ public class CreateShipsController : MonoBehaviour {
             gameInfo.setBattleshipSize(gameInfo.getBattleshipSize() - 1);
             if (gameInfo.getBattleshipSize() == 0)
             {
-                //gameInfo.battleship--;
                 gameInfo.setBattleship(gameInfo.battleship - 1);
-                //if (gameInfo.battleship != 0)
-                //{
-                //    gameInfo.setBattleshipSize(4);
-                //}
+
                 if (gameInfo.battleship == 0)
                 {
                     gameInfo.battleshipPlaced = true;
@@ -95,7 +78,6 @@ public class CreateShipsController : MonoBehaviour {
         else if (gameInfo.cruiserPlaced == false)
         {
             info = "Cr" + gameInfo.cruiser;
-            //info = Convert.ToString(gameInfo.cruiserSize);
 
             gameInfo.playerBoard[buttonID] = "cruiser";
             gameInfo.cruiserSize--;
@@ -117,7 +99,6 @@ public class CreateShipsController : MonoBehaviour {
         else if (gameInfo.submarinePlaced == false)
         {
             info = "S" + gameInfo.submarine;
-            //info = Convert.ToString(gameInfo.submarineSize);
 
             gameInfo.playerBoard[buttonID] = "submarine";
             gameInfo.submarineSize--;
@@ -139,7 +120,6 @@ public class CreateShipsController : MonoBehaviour {
         else if (gameInfo.destroyerPlaced == false)
         {
             info = "D" + gameInfo.destroyer;
-            //info = Convert.ToString(gameInfo.destroyerSize);
 
             gameInfo.playerBoard[buttonID] = "destroyer" + gameInfo.destroyer;
             gameInfo.destroyerSize--;

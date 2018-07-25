@@ -70,14 +70,6 @@ public class GameInfo : MonoBehaviour {
         submarineSize = 2;
 
         pcBattleship = 1;
-        //carrier = 1;
-        //carrier_size = 4;
-        //carrier_placed = false;
-
-        //pc_carrier = 1;
-        //pc_carrier_size = 4;
-        //pc_carrier_placed = false;
-        //shipController = GetComponent<CreateShipsController>();
 
         for (int k = 0; k < 100; k++)
         {
@@ -93,15 +85,6 @@ public class GameInfo : MonoBehaviour {
         }
          
         setPCBoard();
-
-        //for (int i = 0; i < 10; i++)
-        //{
-        //    for (int j = 0; j < 10; j++)
-        //    {
-        //        Debug.Log(pcBoard[i, j]);
-        //    }
-        //    Debug.Log("");
-        //}
     }
 
     public static GameInfo GetInstance() { return instance; }
@@ -116,17 +99,8 @@ public class GameInfo : MonoBehaviour {
         battleship = ship;
     }
 
-    //public int getCarrierSize()
-    //{
-    //    return carrier_size;
-    //}
-
     public void Update()
     {
-        //if (GameObject.Find("Game Controller") != null)
-        //{
-        //    gameController.GetComponent<GameController>().SetGameInfoReference(this);
-        //}
         gameController = (GameController)FindObjectOfType(typeof(GameController));
     }
 
@@ -144,11 +118,6 @@ public class GameInfo : MonoBehaviour {
     {
         shipController = controller;
     }
-
-    //public void SetGameInfoReference(CreateShipsController controller)
-    //{
-    //    shipController = controller;
-    //}
 
     public void setPCBoard()
     {
@@ -192,8 +161,6 @@ public class GameInfo : MonoBehaviour {
         System.Random rnd = new System.Random();
         int rnd_x = rnd.Next(0, 10);
         int rnd_y = rnd.Next(0, 10);
-        //int rnd_x = UnityEngine.Random.Range(0, 10);
-        //int rnd_y = UnityEngine.Random.Range(0, 10);
         bool canPlace = true;
 
         if ((rnd_x + shipSize) < 10 && (rnd_y + shipSize) < 10)
