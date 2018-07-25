@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/Scenes/place_ships.unity
-  isLoaded: 1
-  isActive: 1
